@@ -47,3 +47,11 @@ resource "aws_lambda_permission" "authinator_permission" {
 # --- Lambda Config ends ---
 
 
+resource "aws_cloudwatch_log_subscription_filter" "example" {
+  name            = "${var.bef-presigned-url-lambda-function-name}-subscription_filter"
+  role_arn        = data.aws_ssm_parameter.org_logging_role.value # NEW REQUIREMENT
+  log_group_name  = "/aws/lambda/${module.presigned-url-lambda.function_name}"
+  filter_pattern  = ""
+  destination_arn = data.aws_ssm_parameter.org_logging_arn.value
+  distribution    = "Random"
+}

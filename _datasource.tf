@@ -11,3 +11,13 @@ locals {
   s3_bucket_name = "${var.bef_bucket_name}-${data.aws_caller_identity.current.account_id}"
 }
 
+# ----------------------------------------------------------------------------------------------------------------------
+# Load the Central Logging Destination ARN
+# ----------------------------------------------------------------------------------------------------------------------
+data "aws_ssm_parameter" "org_logging_arn" {
+  name = "/Enterprise/OrgCentralLoggingDestinationArn"
+}
+ 
+data "aws_ssm_parameter" "org_logging_role" {
+  name = "/Enterprise/OrgCentralLoggingRole"
+}
