@@ -1,0 +1,1161 @@
+Push event to branch feature-PBBEF-1571
+16:21:01 Connecting to https://git.express-scripts.com/api/v3 using This is the enterprise Health Services GitHub credentials for Jenkins
+Obtained Jenkinsfile from 5810074366b55b040e2f862905c6a009423f18a0
+[Pipeline] Start of Pipeline
+[Pipeline] library
+Loading library epf@main
+Examining cigna/enterprise-pipeline-framework
+Attempting to resolve main as a branch
+Resolved main as branch main at revision cc00e5e39af0f41f3925026a52fe0edfb8ea412e
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/jenkins_home/jobs/orchestrators-folders/jobs/pbbef/jobs/Non-Production/jobs/TERRAFORMS/jobs/aws-terraform-hs-bef-intentapi/branches/feature-PBBEF-1571/workspace@libs/3c1ad5b67ee798f247d765c15302ae0bdd27719722cb644afcd8575eac3ef99a/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.sys.cigna.com/cigna/enterprise-pipeline-framework.git # timeout=10
+Pruning obsolete local branches
+Pruning obsolete local tags that do not exist on remotes
+ > git show-ref --tags -d # timeout=10
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.5'
+ > git ls-remote -t -- https://github.sys.cigna.com/cigna/enterprise-pipeline-framework.git # timeout=10
+Using shallow fetch with depth 1
+Fetching upstream changes from https://github.sys.cigna.com/cigna/enterprise-pipeline-framework.git
+ > git fetch --tags --force --progress --prune --depth=1 -- https://github.sys.cigna.com/cigna/enterprise-pipeline-framework.git +refs/heads/main:refs/remotes/origin/main # timeout=10
+Checking out Revision cc00e5e39af0f41f3925026a52fe0edfb8ea412e (main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f cc00e5e39af0f41f3925026a52fe0edfb8ea412e # timeout=10
+Commit message: "Merge pull request #422 from cigna/update-java-2176"
+ > git rev-list --no-walk cc00e5e39af0f41f3925026a52fe0edfb8ea412e # timeout=10
+[Pipeline] sendSplunkConsoleLog
+[Pipeline] {
+[Pipeline] libraryResource
+[Pipeline] echo
+ .----------------. .----------------. .----------------. .----------------. .----------------. .----------------. .----------------.
+| .--------------. | .--------------. | .--------------. | .--------------. | .--------------. | .--------------. | .--------------. |
+| |              | | |              | | |  _________   | | |   ______     | | |  _________   | | |              | | |              | |
+| |              | | |              | | | |_   ___  |  | | |  |_   __ \   | | | |_   ___  |  | | |              | | |              | |
+| |    ______    | | |    ______    | | |   | |_  \_|  | | |    | |__) |  | | |   | |_  \_|  | | |    ______    | | |    ______    | |
+| |   |______|   | | |   |______|   | | |   |  _|  _   | | |    |  ___/   | | |   |  _|      | | |   |______|   | | |   |______|   | |
+| |              | | |              | | |  _| |___/ |  | | |   _| |_      | | |  _| |_       | | |              | | |              | |
+| |              | | |              | | | |_________|  | | |  |_____|     | | | |_____|      | | |              | | |              | |
+| |              | | |              | | |              | | |              | | |              | | |              | | |              | |
+| '--------------' | '--------------' | '--------------' | '--------------' | '--------------' | '--------------' | '--------------' |
+ '----------------' '----------------' '----------------' '----------------' '----------------' '----------------' '----------------'
+
+******************************************************************************************************************************************
+*                                                        *** COMPLIANCE NOTICE ***                                                       *
+*  Users to specify a Goals file if needed to check their current compliance posture. If not specified the pipeline will create a goals  *
+*  file automatically and add the Pipeline goal. This change will allow for the removal of Production deployment phases if a pipelines   *
+*  compliance posture is invalid. For more information on how to modify your pipeline to allow production deployments, please visit:     *
+*                                   https://github.sys.cigna.com/cigna/adjudicator/wiki/How-to-Use                                       *
+*                                                                                                                                        *
+*                                                         *** VERSION NOTICE ***                                                         *
+*  The EPF team supports the past three major and minor released versions of the shared pipeline. If teams are using an unsupported      *
+*  version it is the teams responsibility to resolve issues. For available supported versions please see:                                *                                                                                                                            *
+*                                    https://github.sys.cigna.com/cigna/enterprise-pipeline-framework/tags                               *
+*                                                                                                                                        *
+******************************************************************************************************************************************
+[Pipeline] echo
+Feature Flags: showStackTraces=false, nonProdComplianceChecks=true, debug=false, verbose=false, legacyCheckout=false, injectCheckpoints=false, podAutotuning=[enabled:false, dryRun:true]
+[Pipeline] echo
+Follow the below link to see resource metrics for this pipeline:
+https://o-grafana.apps.devops-1-prod.openshift.cignacloud.com/d/xnyVI_3Mk/namespace-container-metrics?orgId=1&refresh=10s&from=1739290861186&to=1739290871802&var-namespace=pbbef-openshift-devops1 
+[Pipeline] echo
+Using GitHubSCM provider for name: EPF, state: pending, phase: Status Check, as: null
+[Pipeline] timestamps
+[Pipeline] {
+[Pipeline] properties
+[Pipeline] parallel
+[Pipeline] { (Branch: sendEmail)
+[Pipeline] { (Branch: sendMattermost)
+[Pipeline] { (Branch: sendTeams)
+[Pipeline] { (Branch: sendWebex)
+[Pipeline] }
+[Pipeline] }
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] echo
+11:21:11  Pipeline Started
+[Pipeline] echo
+11:21:11  {"scm":{"repo":null,"gitCommit":null},"orchestrator":{"jobName":"orchestrators-folders/pbbef/Non-Production/TERRAFORMS/aws-terraform-hs-bef-intentapi/feature-PBBEF-1571","buildNumber":"7","branchName":"feature-PBBEF-1571","node":null,"timeInPipeline":"10 sec and counting"},"epf":{"stage":"Pipeline Started","message":"Pipeline Started","userProvidedConfig":{"githubConnectionName":"github","githubCredentialsId":"GIT_TOKEN","commitStatusName":"","cloudName":"pbbef-openshift-devops1","adjudicatorEnvironment":"prod"}}}
+[Pipeline] withCredentials
+11:21:11  Masking supported pattern matches of $EPF_GITHUB_ACCESS_TOKEN
+[Pipeline] {
+[Pipeline] echo
+11:21:11  Assessing changed files...
+[Pipeline] httpRequest
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] echo
+11:21:12  Changed files: [envs/dev-candidate/backend.config]
+[Pipeline] echo
+11:21:12  checkoutConfiguration.repo.shallow: false
+[Pipeline] echo
+11:21:12  moduleToRun is obtained from default modules for 'common:cnp-preflight-check-git-settings:null'
+[Pipeline] echo
+11:21:12  ========== MODULE INFO ==========
+11:21:12  Name: cnp-preflight-check-git-settings
+11:21:12  Contract: PREFLIGHT_CHECK
+11:21:12  Command: cnp-preflight-check-git-settings.sh
+11:21:12  Subcommand: 
+11:21:12  Docker Image: registry-dev.cigna.com/cnp/cnp-docker-core:1.1.7
+11:21:12  Required Credentials:[{"type":"string", "id":"GIT_TOKEN"}]
+11:21:12  =======================================
+[Pipeline] echo
+11:21:12  Accumulating pod template requirements for Module(common: PREFLIGHT_CHECK dev) : registry-dev.cigna.com/cnp/cnp-docker-core:1.1.7(cnp-docker-corev117)
+[Pipeline] echo
+11:21:12  moduleToRun is obtained from default modules for 'quality:cnp-quality-profile-checkmarx:scan'
+[Pipeline] echo
+11:21:12  ========== MODULE INFO ==========
+11:21:12  Name: cnp-quality-profile-checkmarx
+11:21:12  Contract: SECURITY_SCAN
+11:21:12  Command: cnp-quality-profile-checkmarx.sh
+11:21:12  Subcommand: scan
+11:21:12  Docker Image: registry-dev.cigna.com/cnp/cnp-docker-maven-java8:1.2.8
+11:21:12  Required Credentials:[{"type":"usernamePassword", "id":"bef_checkmarx", "prefix":"CX"}]
+11:21:12  =======================================
+[Pipeline] echo
+11:21:12  Accumulating pod template requirements for Module(quality: scan dev) : registry-dev.cigna.com/cnp/cnp-docker-maven-java8:1.2.8(cnp-docker-maven-java8v128)
+[Pipeline] echo
+11:21:12  Accumulating pod template requirements for Linting([approvalrequest]) : :(jnlp)
+[Pipeline] echo
+11:21:12  moduleToRun is obtained by parsing [moduleType:terraform, branchPattern:^(develop|release|hotfix|feature).*, module:[contractName:Plan Dev Candidate, commandName:cnp-deploy-terraform-aws.sh, subCommand:plan, image:registry-dev.cigna.com/cnp/cnp-docker-terraform:1.0.0-dev-ov2, moduleName:cnp-deploy-terraform-aws, sdlcEnvironment:dev-candidate], args:[credentials:[[id:DAWS-HS-UPSILONFRIES, env:dev, type:string]], configDir:envs/dev-candidate, env:dev, awsAccountId:364685145795, awsUsername:DAWS-HS-UPSILONFRIES, awsRoleName:DEPLOYER, tfVersion:1.4.6, tfDir:], container:[memory:2000], phaseCache:false, stashIncludePattern:, stashExcludePattern:, resourceStrategy:, resourceScaleFactor:4, cloudName:pbbef-openshift-devops1, checkmarxEnabled:true, sonarEnabled:true, phaseInstance:com.cigna.modules.Module@19cd8b0a, phaseLabel:Phase 3, isStashEnabled:true, sdlcEnvironment:Undefined]
+[Pipeline] echo
+11:21:12  ========== MODULE INFO ==========
+11:21:12  Name: cnp-deploy-terraform-aws
+11:21:12  Contract: Plan Dev Candidate
+11:21:12  Command: cnp-deploy-terraform-aws.sh
+11:21:12  Subcommand: plan
+11:21:12  Docker Image: registry-dev.cigna.com/cnp/cnp-docker-terraform:1.0.0-dev-ov2
+11:21:12  Required Credentials:[{"type":"string", "id":"DAWS-HS-UPSILONFRIES", "env":"dev"}]
+11:21:12  =======================================
+[Pipeline] echo
+11:21:12  Accumulating pod template requirements for Module(terraform: plan) : registry-dev.cigna.com/cnp/cnp-docker-terraform:1.0.0-dev-ov2(cnp-docker-terraformv100-dev-ov2)
+[Pipeline] echo
+11:21:12  Pipeline starting with 4 phases, running in 1 cloud
+[Pipeline] echo
+11:21:12  ================================================== EXECUTION PLAN ==================================================
+11:21:12  Processing pod groups in this order: [pbbef-openshift-devops1]
+11:21:12      PHASE GROUP 0: pbbef-openshift-devops1 # PHASES 4
+11:21:12        PHASE 0 [Module(common: PREFLIGHT_CHECK dev)](pbbef-openshift-devops1):
+11:21:12          -> container jnlp, cpu: 500m, memory: 600Mi
+11:21:12          -> container cnp-docker-corev117, cpu: 500m, memory: 1000Mi
+11:21:12        PHASE 1 [Module(quality: scan dev)](pbbef-openshift-devops1):
+11:21:12          -> container jnlp, cpu: 500m, memory: 600Mi
+11:21:12          -> container cnp-docker-maven-java8v128, cpu: 500m, memory: 1000Mi
+11:21:12        PHASE 2 [Linting([approvalrequest])](pbbef-openshift-devops1):
+11:21:12          -> container jnlp, cpu: 500m, memory: 600Mi
+11:21:12        PHASE 3 [Module(terraform: plan)](pbbef-openshift-devops1):
+11:21:12          -> container jnlp, cpu: 500m, memory: 600Mi
+11:21:12          -> container cnp-docker-terraformv100-dev-ov2, cpu: 500m, memory: 2000Mi
+11:21:12  ====================================================================================================================
+[Pipeline] echo
+11:21:12  Creating base pod 'epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8e' for pod group 'pbbef-openshift-devops1' on cloud 'pbbef-openshift-devops1'
+[Pipeline] ansiColor
+[Pipeline] {
+11:21:12  
+[Pipeline] echo
+11:21:12  
+11:21:12  		******************************************************
+11:21:12  		               Pod's Resource Utilization
+11:21:12  
+11:21:12  		     Total CPU Request:		876m (millicores)
+11:21:12  		     Total CPU Limit:		2100m (millicores)
+11:21:12  		     Total Memory Request:	1601Mi (Mebibytes)
+11:21:12  		     Total Memory Limit:	4850Mi (Mebibytes)
+11:21:12  
+11:21:12  		******************************************************
+11:21:12          
+[Pipeline] }
+11:21:12  
+[Pipeline] // ansiColor
+[Pipeline] podTemplate
+[Pipeline] {
+[Pipeline] node
+11:21:18  Created Pod: pbbef-openshift-devops1 pbbef-openshift-devops1/epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9
+11:21:27  Still waiting to schedule task
+11:21:27  Waiting for next available executor on ‘epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9’
+11:21:35  Agent epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9 is provisioned from template epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8e-zlv9m
+11:21:35  ---
+11:21:35  apiVersion: "v1"
+11:21:35  kind: "Pod"
+11:21:35  metadata:
+11:21:35    annotations:
+11:21:35      epf_branch: "feature-PBBEF-1571"
+11:21:35      kubernetes.jenkins.io/last-refresh: "1739290877957"
+11:21:35      buildUrl: "https://orchestrator24.orchestrator-v2.sys.cigna.com/job/orchestrators-folders/job/pbbef/job/Non-Production/job/TERRAFORMS/job/aws-terraform-hs-bef-intentapi/job/feature-PBBEF-1571/7/"
+11:21:35      runUrl: "job/orchestrators-folders/job/pbbef/job/Non-Production/job/TERRAFORMS/job/aws-terraform-hs-bef-intentapi/job/feature-PBBEF-1571/7/"
+11:21:35    labels:
+11:21:35      kind: "jenkins"
+11:21:35      source: "epf"
+11:21:35      epf_pod_group: "aws-terraform-hs-bef-intentapi.pbbef-openshift-devops1"
+11:21:35      jenkins: "slave"
+11:21:35      jenkins/label-digest: "4727c9751a0f64ef4e98055f023b2d34b32c2ec1"
+11:21:35      jenkins/label: "pf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8e"
+11:21:35      kubernetes.jenkins.io/controller: "https___orchestrator24_orchestrator-v2_sys_cigna_comx"
+11:21:35      cloudbees.com/master: "orchestrator24"
+11:21:35    name: "epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9"
+11:21:35    namespace: "pbbef-openshift-devops1"
+11:21:35  spec:
+11:21:35    affinity:
+11:21:35      podAntiAffinity:
+11:21:35        preferredDuringSchedulingIgnoredDuringExecution:
+11:21:35        - podAffinityTerm:
+11:21:35            labelSelector:
+11:21:35              matchExpressions:
+11:21:35              - key: "com.cloudbees.cje.type"
+11:21:35                operator: "In"
+11:21:35                values:
+11:21:35                - "master"
+11:21:35                - "cjoc"
+11:21:35            topologyKey: "kubernetes.io/hostname"
+11:21:35          weight: 1
+11:21:35    containers:
+11:21:35    - command:
+11:21:35      - "/bin/sh"
+11:21:35      - "-c"
+11:21:35      - "umask 0000; jenkins-agent"
+11:21:35      env:
+11:21:35      - name: "JENKINS_SECRET"
+11:21:35        value: "********"
+11:21:35      - name: "JENKINS_AGENT_NAME"
+11:21:35        value: "epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9"
+11:21:35      - name: "JENKINS_WEB_SOCKET"
+11:21:35        value: "true"
+11:21:35      - name: "REMOTING_OPTS"
+11:21:35        value: "-noReconnectAfter 1d"
+11:21:35      - name: "JENKINS_NAME"
+11:21:35        value: "epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9"
+11:21:35      - name: "JENKINS_AGENT_WORKDIR"
+11:21:35        value: "/home/jenkins/agent -internalDir remoting-300d78"
+11:21:35      - name: "JENKINS_URL"
+11:21:35        value: "https://orchestrator24.orchestrator-v2.sys.cigna.com/"
+11:21:35      image: "registry.cigna.com/enterprise-devops/conduit-jnlp:cloudbees-2.462.1.3"
+11:21:35      imagePullPolicy: "Always"
+11:21:35      name: "jnlp"
+11:21:35      resources:
+11:21:35        limits:
+11:21:35          cpu: "500m"
+11:21:35          memory: "600Mi"
+11:21:35        requests:
+11:21:35          cpu: "500m"
+11:21:35          memory: "600Mi"
+11:21:35      tty: true
+11:21:35      volumeMounts:
+11:21:35      - mountPath: "/home/jenkins/agent/sonar"
+11:21:35        name: "sonar-workspace"
+11:21:35      - mountPath: "/home/jenkins/agent/setup-sonar"
+11:21:35        name: "setup-sonar"
+11:21:35      - mountPath: "/home/jenkins/agent"
+11:21:35        name: "workspace-volume"
+11:21:35        readOnly: false
+11:21:35      workingDir: "/home/jenkins/agent"
+11:21:35    - command:
+11:21:35      - "sh"
+11:21:35      - "-c"
+11:21:35      - "trap \"exit\" TERM; while [ 1 ]; do sleep 60 & wait $!; done;"
+11:21:35      image: "registry-dev.cigna.com/cnp/cnp-docker-core:1.1.7"
+11:21:35      imagePullPolicy: "Always"
+11:21:35      name: "cnp-docker-corev117"
+11:21:35      resources:
+11:21:35        limits:
+11:21:35          cpu: "500m"
+11:21:35          memory: "1000Mi"
+11:21:35        requests:
+11:21:35          cpu: "125m"
+11:21:35          memory: "250Mi"
+11:21:35      tty: true
+11:21:35      volumeMounts:
+11:21:35      - mountPath: "/home/jenkins/agent"
+11:21:35        name: "workspace-volume"
+11:21:35        readOnly: false
+11:21:35      workingDir: "/home/jenkins/agent"
+11:21:35    - command:
+11:21:35      - "sh"
+11:21:35      - "-c"
+11:21:35      - "trap \"exit\" TERM; while [ 1 ]; do sleep 60 & wait $!; done;"
+11:21:35      image: "registry-dev.cigna.com/cnp/cnp-docker-maven-java8:1.2.8"
+11:21:35      imagePullPolicy: "Always"
+11:21:35      name: "cnp-docker-maven-java8v128"
+11:21:35      resources:
+11:21:35        limits:
+11:21:35          cpu: "500m"
+11:21:35          memory: "1000Mi"
+11:21:35        requests:
+11:21:35          cpu: "125m"
+11:21:35          memory: "250Mi"
+11:21:35      tty: true
+11:21:35      volumeMounts:
+11:21:35      - mountPath: "/home/jenkins/agent"
+11:21:35        name: "workspace-volume"
+11:21:35        readOnly: false
+11:21:35      workingDir: "/home/jenkins/agent"
+11:21:35    - command:
+11:21:35      - "sh"
+11:21:35      - "-c"
+11:21:35      - "trap \"exit\" TERM; while [ 1 ]; do sleep 60 & wait $!; done;"
+11:21:35      image: "registry-dev.cigna.com/cnp/cnp-docker-terraform:1.0.0-dev-ov2"
+11:21:35      imagePullPolicy: "Always"
+11:21:35      name: "cnp-docker-terraformv100-dev-ov2"
+11:21:35      resources:
+11:21:35        limits:
+11:21:35          cpu: "500m"
+11:21:35          memory: "2000Mi"
+11:21:35        requests:
+11:21:35          cpu: "125m"
+11:21:35          memory: "500Mi"
+11:21:35      tty: true
+11:21:35      volumeMounts:
+11:21:35      - mountPath: "/home/jenkins/agent"
+11:21:35        name: "workspace-volume"
+11:21:35        readOnly: false
+11:21:35      workingDir: "/home/jenkins/agent"
+11:21:35    - command:
+11:21:35      - "sh"
+11:21:35      - "-c"
+11:21:35      - "trap \"exit\" TERM; while [ 1 ]; do sleep 60 & wait $!; done;"
+11:21:35      image: "registry.cigna.com/enterprise-devops/epf-curl:latest"
+11:21:35      imagePullPolicy: "Always"
+11:21:35      name: "epf-curlvlatest"
+11:21:35      resources:
+11:21:35        limits:
+11:21:35          cpu: "100m"
+11:21:35          memory: "250Mi"
+11:21:35        requests:
+11:21:35          cpu: "1m"
+11:21:35          memory: "1Mi"
+11:21:35      tty: true
+11:21:35      volumeMounts:
+11:21:35      - mountPath: "/home/jenkins/agent"
+11:21:35        name: "workspace-volume"
+11:21:35        readOnly: false
+11:21:35      workingDir: "/home/jenkins/agent"
+11:21:35    enableServiceLinks: false
+11:21:35    nodeSelector:
+11:21:35      beta.kubernetes.io/os: "linux"
+11:21:35    restartPolicy: "Never"
+11:21:35    securityContext: {}
+11:21:35    serviceAccountName: ""
+11:21:35    volumes:
+11:21:35    - emptyDir:
+11:21:35        medium: ""
+11:21:35      name: "ecr-creds"
+11:21:35    - emptyDir:
+11:21:35        medium: ""
+11:21:35      name: "sonar-workspace"
+11:21:35    - emptyDir:
+11:21:35        medium: "Memory"
+11:21:35      name: "workspace-volume"
+11:21:35    - emptyDir:
+11:21:35        medium: ""
+11:21:35      name: "aws-creds"
+11:21:35    - emptyDir:
+11:21:35        medium: ""
+11:21:35      name: "setup-sonar"
+11:21:35  
+11:21:35  Running on epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9 in /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+[Pipeline] {
+[Pipeline] dir
+11:21:35  Running in /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (SCM Checkout)
+[Pipeline] container
+[Pipeline] {
+[Pipeline] fileExists
+[Pipeline] dir
+11:21:35  Running in /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+[Pipeline] {
+[Pipeline] echo
+11:21:35  Branch going to checkout: [feature-PBBEF-1571] : [[$class:CloneOption, shallow:false, noTags:true], GitSCMSourceDefaults{includeTags=false}, hudson.plugins.git.extensions.impl.BuildChooserSetting@753986b1]
+[Pipeline] checkout
+11:21:36  The recommended git tool is: NONE
+11:21:41  using credential SVPDEVOP-CIG-CLONEB_UserPw
+11:21:41  Warning: JENKINS-30600: special launcher org.csanchez.jenkins.plugins.kubernetes.pipeline.ContainerExecDecorator$1@361ff4e6; decorates RemoteLauncher[hudson.remoting.Channel@56ab97a3:epf-orchestrators-folders-aws-terraform-hs-bef-inten-f2e8-svfs9] will be ignored (a typical symptom is the Git executable not being run inside a designated container)
+11:21:41  Cloning the remote Git repository
+11:21:41  Avoid fetching tags
+11:21:41  Cloning with configured refspecs honoured and without tags
+11:21:45  Cloning repository https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git
+11:21:45   > git init /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571 # timeout=10
+11:21:45  Fetching upstream changes from https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git
+11:21:45   > git --version # timeout=10
+11:21:45   > git --version # 'git version 2.43.5'
+11:21:45  using GIT_ASKPASS to set credentials This is the enterprise Health Services GitHub credentials for Jenkins
+11:21:45   > git fetch --no-tags --force --progress -- https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git +refs/heads/feature-PBBEF-1571:refs/remotes/origin/feature-PBBEF-1571 # timeout=10
+11:21:47  Avoid second fetch
+11:21:47  Checking out Revision 5810074366b55b040e2f862905c6a009423f18a0 (feature-PBBEF-1571)
+11:21:46   > git config remote.origin.url https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git # timeout=10
+11:21:46   > git config --add remote.origin.fetch +refs/heads/feature-PBBEF-1571:refs/remotes/origin/feature-PBBEF-1571 # timeout=10
+11:21:47   > git config core.sparsecheckout # timeout=10
+11:21:47   > git checkout -f 5810074366b55b040e2f862905c6a009423f18a0 # timeout=10
+11:21:48  Commit message: "Revising bucket's region"
+11:21:48   > git rev-list --no-walk 20ae9c8a677d46450aee8f0d9b0f3d33a6cf72f2 # timeout=10
+[Pipeline] echo
+11:21:49  Branch checked out: feature-PBBEF-1571
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+11:21:49  Starting pod group 'pbbef-openshift-devops1' with 4 phases
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] ansiColor
+[Pipeline] {
+11:21:49  
+[Pipeline] echo
+11:21:49  ---> START PHASE 'Module'
+[Pipeline] echo
+11:21:49  Switching to container 'cnp-docker-corev117'
+[Pipeline] container
+[Pipeline] {
+[Pipeline] echo
+11:21:49  Credential : [@string(credentialsId=GIT_TOKEN,variable=CNP_PREFLIGHT_CHECK_GIT_SETTINGS_MODULE_TOKEN), @string(credentialsId=GIT_TOKEN,variable=CNP_PREFLIGHT_CHECK_GIT_SETTINGS_TOKEN)]
+[Pipeline] echo
+11:21:49  Jira Scanning - DISABLED
+[Pipeline] echo
+11:21:49  CNP_XLR_TEMPLATE_URL is configured to https://xlrelease.express-scripts.com/api/v1/templates/Applications/templates/Folder2a9c42e13b784e8fbb57c559852b807c/Release47c3527db6944b918488c5c90166c4b0/start
+[Pipeline] echo
+11:21:49  setting CNP_CALLBACK_JOB to https://orchestrator24.orchestrator-v2.sys.cigna.com/job/orchestrators-folders/job/pbbef/job/Production/job/DevOps/job/EPF/job/XLRCallbackHandler/
+[Pipeline] echo
+11:21:49  setting CNP_CANDIDATE_JOB to orchestrators-folders/job/pbbef/job/Production/job/DevOps/job/EPF/job/CandidateDeployer
+[Pipeline] stage
+[Pipeline] { (common: PREFLIGHT_CHECK dev)
+[Pipeline] echo
+11:21:49  Switching to container 'cnp-docker-corev117'
+[Pipeline] container
+[Pipeline] {
+[Pipeline] withCredentials
+11:21:49  Masking supported pattern matches of $CNP_PREFLIGHT_CHECK_GIT_SETTINGS_MODULE_TOKEN or $CNP_PREFLIGHT_CHECK_GIT_SETTINGS_TOKEN
+[Pipeline] {
+[Pipeline] configFileProvider
+11:21:49  provisioning config files...
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+11:21:49  Phase caching is disabled, not stashing files.
+[Pipeline] dir
+11:21:49  Running in /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+[Pipeline] {
+[Pipeline] echo
+11:21:49  ---> START MODULE (PREFLIGHT_CHECK:cnp-preflight-check-git-settings)
+[Pipeline] sh
+11:21:50  + cnp-preflight-check-git-settings.sh {"Release_JenkinsMaster":"orchestrator24.orchestrator-v2.sys.cigna.com","Release_BuildUri":"https://orchestrator24.orchestrator-v2.sys.cigna.com/job/orchestrators-folders/job/pbbef/job/Non-Production/job/TERRAFORMS/job/aws-terraform-hs-bef-intentapi/job/feature-PBBEF-1571/7/","Release_rollbackDeploymentPackagePath":"","branchName":"feature-PBBEF-1571","repoUrl":"https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git","commitId":"5810074366b55b040e2f862905c6a009423f18a0"}
+11:21:50  
+11:21:50  WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+11:21:50  
+11:21:50  Package: cnp-preflight-check-git-settings
+11:21:50  Version: 0.4.0
+11:21:50  Status: install ok installed
+11:21:50  Priority: optional
+11:21:50  Maintainer: Software Engineering Excellence
+11:21:50  Installed-Size: unknown
+11:21:50  Depends: cnp-util-core, git
+11:21:50  Download-Size: unknown
+11:21:50  APT-Manual-Installed: yes
+11:21:50  APT-Sources: /var/lib/dpkg/status
+11:21:50  Description: Verifies that branch protection rules have been set on Git Repo.
+11:21:50  
+11:21:50  cnp-preflight-check-git-settings checking config of remote Url: https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git
+11:21:50  2025/02/11 16:21:50 CNP_PREFLIGHT_CHECK_GIT_SETTINGS version 0.0.6
+11:21:50  2025/02/11 16:21:50 ****
+11:21:50  2025/02/11 16:21:50 Parsing URL
+11:21:50  2025/02/11 16:21:50 https://git.express-scripts.com, ExpressScripts
+11:21:50  2025/02/11 16:21:50 {"query":"{ repository(owner: \"ExpressScripts\", name: \"aws-terraform-hs-bef-intentapi\") { defaultBranchRef { name } branchProtectionRules(first: 100) {nodes {pattern isAdminEnforced dismissesStaleReviews requiresApprovingReviews restrictsPushes}}}}","variables":{}}
+11:21:50  2025/02/11 16:21:50 200
+11:21:50  2025/02/11 16:21:50 Logging HTTP Response:
+11:21:50  2025/02/11 16:21:50 {"data":{"repository":{"defaultBranchRef":{"name":"develop"},"branchProtectionRules":{"nodes":[{"pattern":"master","isAdminEnforced":false,"dismissesStaleReviews":false,"requiresApprovingReviews":false,"restrictsPushes":true},{"pattern":"develop","isAdminEnforced":false,"dismissesStaleReviews":true,"requiresApprovingReviews":true,"restrictsPushes":true}]}}}}
+11:21:50  2025/02/11 16:21:50 Validating git repository:
+11:21:50  2025/02/11 16:21:50 Default branch is set to: develop
+11:21:50  master
+11:21:50  Verifying Master/Main Branch
+11:21:50  2025/02/11 16:21:50 Master/Main branch is valid
+11:21:50  develop
+11:21:50  Verifying Develop Branch
+11:21:50  2025/02/11 16:21:50 Develop branch is valid.
+11:21:50  2025/02/11 16:21:50 master/main valid: true, develop valid: true
+11:21:50  
+11:21:50  Preflight check git settings successful
+[Pipeline] fileExists
+[Pipeline] echo
+11:21:50  File cnp-preflight-check-git-settings-results.json not found
+[Pipeline] echo
+11:21:50  ---> END MODULE (PREFLIGHT_CHECK:cnp-preflight-check-git-settings)
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] echo
+11:21:50  Phase caching is disabled, not stashing files.
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // configFileProvider
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] echo
+11:21:50  <--- END PHASE 'Module'
+[Pipeline] }
+11:21:50  
+[Pipeline] // ansiColor
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] ansiColor
+[Pipeline] {
+11:21:50  
+[Pipeline] echo
+11:21:50  ---> START PHASE 'Module'
+[Pipeline] echo
+11:21:50  Switching to container 'cnp-docker-maven-java8v128'
+[Pipeline] container
+[Pipeline] {
+[Pipeline] echo
+11:21:50  Credential : [@usernamePassword(credentialsId=bef_checkmarx,passwordVariable=CNP_QUALITY_PROFILE_CHECKMARX_CX_MODULE_PASSWORD,usernameVariable=CNP_QUALITY_PROFILE_CHECKMARX_CX_MODULE_USER), @usernamePassword(credentialsId=bef_checkmarx,passwordVariable=CNP_QUALITY_PROFILE_CHECKMARX_CX_CRED,usernameVariable=CNP_QUALITY_PROFILE_CHECKMARX_CX_USER)]
+[Pipeline] echo
+11:21:50  Jira Scanning - DISABLED
+[Pipeline] echo
+11:21:50  CNP_XLR_TEMPLATE_URL is configured to https://xlrelease.express-scripts.com/api/v1/templates/Applications/templates/Folder2a9c42e13b784e8fbb57c559852b807c/Release47c3527db6944b918488c5c90166c4b0/start
+[Pipeline] echo
+11:21:50  setting CNP_CALLBACK_JOB to https://orchestrator24.orchestrator-v2.sys.cigna.com/job/orchestrators-folders/job/pbbef/job/Production/job/DevOps/job/EPF/job/XLRCallbackHandler/
+[Pipeline] echo
+11:21:50  setting CNP_CANDIDATE_JOB to orchestrators-folders/job/pbbef/job/Production/job/DevOps/job/EPF/job/CandidateDeployer
+[Pipeline] stage
+[Pipeline] { (quality: scan dev)
+[Pipeline] echo
+11:21:50  Switching to container 'cnp-docker-maven-java8v128'
+[Pipeline] container
+[Pipeline] {
+[Pipeline] withCredentials
+11:21:50  Masking supported pattern matches of $CNP_QUALITY_PROFILE_CHECKMARX_CX_MODULE_PASSWORD or $CNP_QUALITY_PROFILE_CHECKMARX_CX_CRED
+[Pipeline] {
+[Pipeline] configFileProvider
+11:21:50  provisioning config files...
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+11:21:50  Phase caching is disabled, not stashing files.
+[Pipeline] dir
+11:21:50  Running in /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+[Pipeline] {
+[Pipeline] echo
+11:21:50  ---> START MODULE (SECURITY_SCAN:cnp-quality-profile-checkmarx)
+[Pipeline] sh
+11:21:51  + cnp-quality-profile-checkmarx.sh scan {"cxPreset":36,"projectName":"aws-terraform-hs-bef-intentapi","cxProductionBranch":"master","teamName":"BEF","cxIncremental":true,"cxExcludeFolders":".git,.gitignore","Release_JenkinsMaster":"orchestrator24.orchestrator-v2.sys.cigna.com","Release_BuildUri":"https://orchestrator24.orchestrator-v2.sys.cigna.com/job/orchestrators-folders/job/pbbef/job/Non-Production/job/TERRAFORMS/job/aws-terraform-hs-bef-intentapi/job/feature-PBBEF-1571/7/","Release_rollbackDeploymentPackagePath":"","branchName":"feature-PBBEF-1571","repoUrl":"https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git","commitId":"5810074366b55b040e2f862905c6a009423f18a0"}
+11:21:51  
+11:21:51  WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+11:21:51  
+11:21:51  Package: cnp-quality-profile-checkmarx
+11:21:51  Version: 0.0.10
+11:21:51  Status: install ok installed
+11:21:51  Priority: optional
+11:21:51  Maintainer: Evernorth Software Engineering Excellence
+11:21:51  Installed-Size: unknown
+11:21:51  Depends: unzip
+11:21:51  Download-Size: unknown
+11:21:51  APT-Manual-Installed: yes
+11:21:51  APT-Sources: /var/lib/dpkg/status
+11:21:51  Description: Package includes checkmarx command line api scripts for CxSAST scans.
+11:21:51  
+11:21:51  
+11:21:51  
+11:21:51  Setting variable cxExcludeFolders with value '.git,.gitignore'
+11:21:51  Setting variable cxIncremental with value 'true'
+11:21:51  Setting variable cxPreset with value '36'
+11:21:51  Setting variable cxProductionBranch with value 'master'
+11:21:52  Setting variable projectName with value 'aws-terraform-hs-bef-intentapi'
+11:21:52  Setting variable teamName with value 'BEF'
+11:21:52  [WARNING] You've set [ cxExcludeFolders ]. This parameter is being deprecated with the Enterprise Checkmarx migration and will be removed in a subsequent version.
+11:21:52  [WARNING] You've set [ cxIncremental ]. This parameter is being deprecated with the Enterprise Checkmarx migration and will be removed in a subsequent version.
+11:21:52  [WARNING] You've set [ cxPreset ]. This parameter is being deprecated with the Enterprise Checkmarx migration and will be removed in a subsequent version.
+11:21:52  Checkmarx Team Name: BEF
+11:21:52  cxServer: https://cigna.checkmarx.net
+11:21:52  Mapping Preset
+11:21:53  Vulnerability thresholds enabled
+11:21:53  Python3 not installed
+11:21:53  DSO_IS_INSTALLED: false
+11:21:53  Team Path: CxServer/Cigna
+11:21:53  Project Name: CxServer/Cigna/BEF/aws-terraform-hs-bef-intentapi
+11:21:53  CxUser: bef_api
+11:21:53  locationpath: .
+11:21:53  Preset: Checkmarx Default
+11:21:53  Comment: 'EPF Module: cnp-quality-profile-checkmarx'
+11:21:53  Config file location: /usr/local/etc/cx_console.properties
+11:21:53  Optional Keys: -Incremental -LocationFilesExclude !**/*.3g2,!**/*.3gp,!**/*.7z,!**/*.DS_Store,!**/*.aac,!**/*.ahtm,!**/*.ahtml,!**/*.aif,!**/*.asf,!**/*.asx,!**/*.avi,!**/*.bak,!**/*.bin,!**/*.bmp,!**/*.class,!**/*.csv,!**/*.dll,!**/*.doc*,!**/*.dot*,!**/*.emf,!**/*.exe,!**/*.fhtml,!**/*.flv,!**/*.gif,!**/*.gz,!**/*.hdm,!**/*.hdml,!**/*.hsql,!**/*.ht,!**/*.hta,!**/*.htc,!**/*.htd,!**/*.htmls,!**/*.iff,!**/*.ihtml,!**/*.iml,!**/*.ipr,!**/*.iws,!**/*.jar,!**/*.jpg,!**/*.log,!**/*.m3u,!**/*.mht*,!**/*.mid,!**/*.mov,!**/*.mp3,!**/*.mp4,!**/*.mpa,!**/*.mpg,!**/*.nuget.props,!**/*.nuget.targets,!**/*.nupkg,!**/*.odp,!**/*.ods,!**/*.odt,!**/*.pdb,!**/*.pdf,!**/*.png,!**/*.pot*,!**/*.ppa*,!**/*.pps*,!**/*.ppt*,!**/*.psd,!**/*.ra,!**/*.rar,!**/*.rm,!**/*.slk,!**/*.snupkg,!**/*.ssi,!**/*.stm*,!**/*.swf,!**/*.tar,!**/*.tar.gz,!**/*.thmx,!**/*.tif,!**/*.tmp,!**/*.ttml,!**/*.txn,!**/*.vob,!**/*.vscode,!**/*.wav,!**/*.wma,!**/*.wmv,!**/*.xla*,!**/*.xls*,!**/*.xlt*,!**/*.xlw,!**/*.zip,!**/Checkmarx/Reports/*.*,!**/node_modules/*.* -LocationPathExclude _cvs,.svn,.hg,.git,.bzr,bin,obj,backup,node_modules,.git,.gitignore 
+11:21:53  Working directory: /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+11:21:54  [2025-02-11T16:21:54,730 INFO ] -----------------------------------------------------------------------------------------
+11:21:54  [2025-02-11T16:21:54,736 INFO ] CxConsole Configuration: 
+11:21:54  [2025-02-11T16:21:54,737 INFO ] --------------------
+11:21:54  [2025-02-11T16:21:54,828 INFO ] plugin version: 1.1.33
+11:21:54  [2025-02-11T16:21:54,828 INFO ] verbose: true
+11:21:54  [2025-02-11T16:21:54,828 INFO ] cxserver: https://cigna.checkmarx.net
+11:21:54  [2025-02-11T16:21:54,838 INFO ] cxuser: 6812ed0a977bd7b67ccaee325fe9ae2b0edc25dcb7d0e0d34a63a281e1506452
+11:21:54  [2025-02-11T16:21:54,839 INFO ] cxpassword: ********
+11:21:54  [2025-02-11T16:21:54,839 INFO ] projectname: CxServer/Cigna/BEF/aws-terraform-hs-bef-intentapi
+11:21:54  [2025-02-11T16:21:54,839 INFO ] locationtype: folder
+11:21:54  [2025-02-11T16:21:54,839 INFO ] locationpath: /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571/.
+11:21:54  [2025-02-11T16:21:54,839 INFO ] comment: 'EPF Module: cnp-quality-profile-checkmarx'
+11:21:54  [2025-02-11T16:21:54,839 INFO ] config: /usr/local/etc/cx_console.properties
+11:21:54  [2025-02-11T16:21:54,839 INFO ] preset: Checkmarx Default
+11:21:54  [2025-02-11T16:21:54,839 INFO ] enablesca: true
+11:21:54  [2025-02-11T16:21:54,840 INFO ] scaaccount: Cigna
+11:21:54  [2025-02-11T16:21:54,840 INFO ] cxsasturl: https://cigna.checkmarx.net
+11:21:54  [2025-02-11T16:21:54,840 INFO ] scaaccesscontrolurl: https://cigna.checkmarx.net/CxRestAPI/auth/
+11:21:54  [2025-02-11T16:21:54,840 INFO ] scausername: 6812ed0a977bd7b67ccaee325fe9ae2b0edc25dcb7d0e0d34a63a281e1506452
+11:21:54  [2025-02-11T16:21:54,840 INFO ] scapassword: ********
+11:21:54  [2025-02-11T16:21:54,840 INFO ] scafilesexclude: !**/*.3g2,!**/*.3gp,!**/*.7z,!**/*.DS_Store,!**/*.aac,!**/*.ahtm,!**/*.ahtml,!**/*.aif,!**/*.asf,!**/*.asx,!**/*.avi,!**/*.bak,!**/*.bin,!**/*.bmp,!**/*.class,!**/*.csv,!**/*.dll,!**/*.doc*,!**/*.dot*,!**/*.emf,!**/*.exe,!**/*.fhtml,!**/*.flv,!**/*.gif,!**/*.gz,!**/*.hdm,!**/*.hdml,!**/*.hsql,!**/*.ht,!**/*.hta,!**/*.htc,!**/*.htd,!**/*.htmls,!**/*.iff,!**/*.ihtml,!**/*.iml,!**/*.ipr,!**/*.iws,!**/*.jar,!**/*.jpg,!**/*.log,!**/*.m3u,!**/*.mht*,!**/*.mid,!**/*.mov,!**/*.mp3,!**/*.mp4,!**/*.mpa,!**/*.mpg,!**/*.nuget.props,!**/*.nuget.targets,!**/*.nupkg,!**/*.odp,!**/*.ods,!**/*.odt,!**/*.pdb,!**/*.pdf,!**/*.png,!**/*.pot*,!**/*.ppa*,!**/*.pps*,!**/*.ppt*,!**/*.psd,!**/*.ra,!**/*.rar,!**/*.rm,!**/*.slk,!**/*.snupkg,!**/*.ssi,!**/*.stm*,!**/*.swf,!**/*.tar,!**/*.tar.gz,!**/*.thmx,!**/*.tif,!**/*.tmp,!**/*.ttml,!**/*.txn,!**/*.vob,!**/*.vscode,!**/*.wav,!**/*.wma,!**/*.wmv,!**/*.xla*,!**/*.xls*,!**/*.xlt*,!**/*.xlw,!**/*.zip,!**/Checkmarx/Reports/*.*,!**/node_modules/*.*
+11:21:54  [2025-02-11T16:21:54,841 INFO ] scapathexclude: _cvs,.svn,.hg,.git,.bzr,bin,obj,backup,node_modules,.git,.gitignore
+11:21:54  [2025-02-11T16:21:54,841 INFO ] incremental: true
+11:21:54  [2025-02-11T16:21:54,841 INFO ] locationfilesexclude: !**/*.3g2,!**/*.3gp,!**/*.7z,!**/*.DS_Store,!**/*.aac,!**/*.ahtm,!**/*.ahtml,!**/*.aif,!**/*.asf,!**/*.asx,!**/*.avi,!**/*.bak,!**/*.bin,!**/*.bmp,!**/*.class,!**/*.csv,!**/*.dll,!**/*.doc*,!**/*.dot*,!**/*.emf,!**/*.exe,!**/*.fhtml,!**/*.flv,!**/*.gif,!**/*.gz,!**/*.hdm,!**/*.hdml,!**/*.hsql,!**/*.ht,!**/*.hta,!**/*.htc,!**/*.htd,!**/*.htmls,!**/*.iff,!**/*.ihtml,!**/*.iml,!**/*.ipr,!**/*.iws,!**/*.jar,!**/*.jpg,!**/*.log,!**/*.m3u,!**/*.mht*,!**/*.mid,!**/*.mov,!**/*.mp3,!**/*.mp4,!**/*.mpa,!**/*.mpg,!**/*.nuget.props,!**/*.nuget.targets,!**/*.nupkg,!**/*.odp,!**/*.ods,!**/*.odt,!**/*.pdb,!**/*.pdf,!**/*.png,!**/*.pot*,!**/*.ppa*,!**/*.pps*,!**/*.ppt*,!**/*.psd,!**/*.ra,!**/*.rar,!**/*.rm,!**/*.slk,!**/*.snupkg,!**/*.ssi,!**/*.stm*,!**/*.swf,!**/*.tar,!**/*.tar.gz,!**/*.thmx,!**/*.tif,!**/*.tmp,!**/*.ttml,!**/*.txn,!**/*.vob,!**/*.vscode,!**/*.wav,!**/*.wma,!**/*.wmv,!**/*.xla*,!**/*.xls*,!**/*.xlt*,!**/*.xlw,!**/*.zip,!**/Checkmarx/Reports/*.*,!**/node_modules/*.*
+11:21:54  [2025-02-11T16:21:54,841 INFO ] locationpathexclude: _cvs,.svn,.hg,.git,.bzr,bin,obj,backup,node_modules,.git,.gitignore
+11:21:54  [2025-02-11T16:21:54,841 INFO ] --------------------
+11:21:54  
+11:21:54  
+11:21:54  [2025-02-11T16:21:54,912 INFO ] Config file location: /usr/local/etc/cx_console.properties
+11:21:56  [2025-02-11T16:21:56,021 INFO ] Initializing Cx client [2024.3.26]
+11:21:56  [2025-02-11T16:21:56,825 INFO ] Checkmarx server version [9.6.0.181]. Hotfix [16].
+11:21:56  [2025-02-11T16:21:56,825 INFO ] Logging into the Checkmarx service.
+11:21:57  [2025-02-11T16:21:57,269 INFO ] full team path: /CxServer/Cigna/BEF
+11:21:57  [2025-02-11T16:21:57,351 INFO ] preset name: Checkmarx Default preset id: 36
+11:21:57  [2025-02-11T16:21:57,483 INFO ] Project already exists with ID 15336
+11:21:57  [2025-02-11T16:21:57,490 INFO ] Locale used in CxSAST is  en-US
+11:21:57  [2025-02-11T16:21:57,490 INFO ] Logging into CxAST-SCA
+11:21:58  [2025-02-11T16:21:57,834 INFO ] -----------------------------------Create CxSAST Scan:------------------------------------
+11:21:58  [2025-02-11T16:21:58,024 INFO ] Uploading the zipped source code.
+11:21:58  [2025-02-11T16:21:58,028 INFO ] Exclude folders converted to: '!**/_cvs/**,!**/.svn/**,!**/.hg/**,!**/.git/**,!**/.bzr/**,!**/bin/**,!**/obj/**,!**/backup/**,!**/node_modules/**,!**/_cvs/**,!**/.svn/**,!**/.hg/**,!**/.git/**,!**/.bzr/**,!**/bin/**,!**/obj/**,!**/backup/**,!**/node_modules/**,!**/.git/**,!**/.gitignore/**,'
+11:21:58  [2025-02-11T16:21:58,322 INFO ] Uploading zip file
+11:21:58  [2025-02-11T16:21:58,523 INFO ] SAST scan created successfully: Scan ID is 2587423
+11:21:58  [2025-02-11T16:21:58,523 INFO ] ----------------------------------- Initiating CxAST-SCA Scan:------------------------------------
+11:21:58  [2025-02-11T16:21:58,523 INFO ] Getting project by name: 'aws-terraform-hs-bef-intentapi'
+11:21:58  [2025-02-11T16:21:58,524 INFO ] Getting project ID by name: 'aws-terraform-hs-bef-intentapi'
+11:21:59  [2025-02-11T16:21:58,831 INFO ] Project ID: befdfd3a-af85-4742-aa92-3a79b4f2a642
+11:21:59  [2025-02-11T16:21:58,832 INFO ] Project already exists with ID befdfd3a-af85-4742-aa92-3a79b4f2a642
+11:21:59  [2025-02-11T16:21:58,915 INFO ] Team name: /CxServer/Cigna/BEF
+11:21:59  [2025-02-11T16:21:58,915 INFO ] Project level custom tag name: null
+11:21:59  [2025-02-11T16:21:59,078 INFO ] Resolving configuration for project: befdfd3a-af85-4742-aa92-3a79b4f2a642
+11:21:59  [2025-02-11T16:21:59,321 INFO ] Got the following manifest patterns [**/package.json, **/package-lock.json, **/lerna.json, **/.npmrc, **/*.gradle, **/gradle-wrapper.properties, **/build.gradle.kts, **/*.csproj, **/*.vbproj, **/Directory.Packages.props, **/nuget.config, **/packages.config, **/pom.xml, **/settings.xml, **/build.sbt, **/requirements.txt, **/requirements-*.txt, **/requirement.txt, **/requirement-*.txt, **/*.whl, **/*.tar.gz, **/*.zip, **/packages.txt, **/yarn.lock, **/.yarnrc, **/composer.json, **/composer.lock, **/bower.json, **/.bowerrc, **/build.properties, **/plugins.sbt, **/gradle.properties, **/gradlew, **/gradlew.bat, **/gradle-wrapper.jar, **/versions.properties, **/VERSION, **/Dockerfile**, **/.env_cxsca-container-build-args, **/.env, **/Package.swift, **/Cartfile, **/Cartfile.private, **/Cartfile.resolved, **/Podfile, **/Podfile.lock, **/go.mod, **/go.sum, **/pyproject.toml, **/poetry.lock]
+11:21:59  [2025-02-11T16:21:59,322 INFO ] Got the following fingerprint patterns [!**/node_modules/**, !**/bower_components/**]
+11:21:59  [2025-02-11T16:21:59,322 INFO ] Using manifest only and fingerprint flow
+11:21:59  [2025-02-11T16:21:59,322 INFO ] Source Directory : /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571/.
+11:21:59  [2025-02-11T16:21:59,322 INFO ] Exclude folders converted to: '!**/_cvs/**,!**/.svn/**,!**/.hg/**,!**/.git/**,!**/.bzr/**,!**/bin/**,!**/obj/**,!**/backup/**,!**/node_modules/**,!**/.git/**,!**/.gitignore/**,'
+11:21:59  [2025-02-11T16:21:59,413 INFO ] Started fingerprint collection on /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571/.
+11:21:59  [2025-02-11T16:21:59,426 INFO ] Calculated fingerprints for 34 files
+11:21:59  [2025-02-11T16:21:59,523 INFO ] Zipping ( 1 KB ): .cxsca.sig
+11:22:00  [2025-02-11T16:21:59,955 INFO ] Uploading to: https://uploads.sca.checkmarx.net/source-code/2d644b95-f546-49f3-9540-39815bdf72a4/20250211-042159895_uwzhc5rj.5tm
+11:22:00  [2025-02-11T16:21:59,956 INFO ] Uploading the zipped data.
+11:22:00  [2025-02-11T16:22:00,166 INFO ] Sending the 'start scan' request.
+11:22:00  [2025-02-11T16:22:00,461 INFO ] Scan started successfully. Scan ID: 03318148-9c41-4706-a595-c1474abbc8a5
+11:22:00  [2025-02-11T16:22:00,461 INFO ] ------------------------------------Get CxSAST Results:-----------------------------------
+11:22:00  [2025-02-11T16:22:00,461 INFO ] Waiting for CxSAST scan to finish.
+11:22:10  [2025-02-11T16:22:10,554 INFO ] Waiting for SAST scan results. Elapsed time: 00:00:10.  0% processed. Status: Queued.
+11:22:20  [2025-02-11T16:22:20,646 INFO ] Waiting for SAST scan results. Elapsed time: 00:00:20.  0% processed. Status: Queued.
+11:22:32  [2025-02-11T16:22:30,733 INFO ] Waiting for SAST scan results. Elapsed time: 00:00:30.  0% processed. Status: Scanning.
+11:22:41  [2025-02-11T16:22:40,811 INFO ] Waiting for SAST scan results. Elapsed time: 00:00:40.  0% processed. Status: Scanning.
+11:22:51  [2025-02-11T16:22:50,905 INFO ] Waiting for SAST scan results. Elapsed time: 00:00:50.  0% processed. Status: Scanning.
+11:23:01  [2025-02-11T16:23:01,011 INFO ] Waiting for SAST scan results. Elapsed time: 00:01:01. 99% processed. Status: Finished.
+11:23:01  [2025-02-11T16:23:01,012 INFO ] SAST scan finished successfully.
+11:23:01  [2025-02-11T16:23:01,012 INFO ] Retrieving SAST scan results
+11:23:01  [2025-02-11T16:23:01,114 INFO ] ----------------------------Checkmarx Scan Results(CxSAST):-------------------------------
+11:23:01  [2025-02-11T16:23:01,114 INFO ] High severity results: 0
+11:23:01  [2025-02-11T16:23:01,114 INFO ] Medium severity results: 11
+11:23:01  [2025-02-11T16:23:01,115 INFO ] Low severity results: 7
+11:23:01  [2025-02-11T16:23:01,115 INFO ] Information severity results: 0
+11:23:01  [2025-02-11T16:23:01,115 INFO ] 
+11:23:01  [2025-02-11T16:23:01,115 INFO ] Scan results location: https://cigna.checkmarx.net/CxWebClient/ViewerMain.aspx?scanId=2587423&ProjectID=15336
+11:23:01  [2025-02-11T16:23:01,115 INFO ] ------------------------------------------------------------------------------------------
+11:23:01  
+11:23:01  [2025-02-11T16:23:01,115 INFO ] ------------------------------------Get CxAST-SCA Results:-----------------------------------
+11:23:01  [2025-02-11T16:23:01,115 INFO ] Waiting for CxAST-SCA scan to finish
+11:23:01  [2025-02-11T16:23:01,220 INFO ] Waiting for CxAST-SCA scan results. Elapsed time: 00:00:00. Status: Completed.
+11:23:01  [2025-02-11T16:23:01,225 INFO ] CxAST-SCA scan finished successfully. Retrieving CxAST-SCA scan results.
+11:23:01  [2025-02-11T16:23:01,403 INFO ] ----CxSCA risk report summary----
+11:23:01  [2025-02-11T16:23:01,403 INFO ] Created on: 2025-02-11T16:22:16.535645Z
+11:23:01  [2025-02-11T16:23:01,403 INFO ] Direct packages: 0
+11:23:01  [2025-02-11T16:23:01,403 INFO ] Critical vulnerabilities: 0
+11:23:01  [2025-02-11T16:23:01,403 INFO ] High vulnerabilities: 0
+11:23:01  [2025-02-11T16:23:01,403 INFO ] Medium vulnerabilities: 0
+11:23:01  [2025-02-11T16:23:01,404 INFO ] Low vulnerabilities: 0
+11:23:01  [2025-02-11T16:23:01,404 INFO ] Scan ID: 03318148-9c41-4706-a595-c1474abbc8a5
+11:23:01  [2025-02-11T16:23:01,404 INFO ] Risk score: 0.00
+11:23:01  [2025-02-11T16:23:01,404 INFO ] Total packages: 0
+11:23:01  [2025-02-11T16:23:01,404 INFO ] Total outdated packages: 0
+11:23:01  [2025-02-11T16:23:01,657 INFO ] CxAST-SCA scan results location: https://sca.checkmarx.net/#/projects/befdfd3a-af85-4742-aa92-3a79b4f2a642/reports/03318148-9c41-4706-a595-c1474abbc8a5
+11:23:01  [2025-02-11T16:23:01,657 INFO ] Retrieved SCA results successfully.
+11:23:01  cnp-quality-profile-checkmarx.sh scan returnCode: 0
+11:23:01  
+11:23:01  WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+11:23:01  
+11:23:01  Package: cnp-util-core
+11:23:01  Version: 0.4.2
+11:23:01  Status: install ok installed
+11:23:01  Priority: optional
+11:23:01  Maintainer: Evernorth Software Engineering Excellence
+11:23:01  Installed-Size: unknown
+11:23:01  Depends: jq
+11:23:01  Download-Size: unknown
+11:23:01  APT-Manual-Installed: yes
+11:23:01  APT-Sources: /var/lib/dpkg/status
+11:23:01  Description: Scripts and utilities for use with your cnp modules
+11:23:01  
+[Pipeline] fileExists
+[Pipeline] readFile
+[Pipeline] echo
+11:23:01  {
+11:23:01  "commandResult":"SUCCESS",
+11:23:01  "commandOutput": {
+11:23:01  }
+11:23:01  }
+11:23:01  
+[Pipeline] sh
+11:23:02  + rm cnp-quality-profile-checkmarx-results.json
+[Pipeline] echo
+11:23:02  ---> END MODULE (SECURITY_SCAN:cnp-quality-profile-checkmarx)
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] echo
+11:23:02  Phase caching is disabled, not stashing files.
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // configFileProvider
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] echo
+11:23:02  <--- END PHASE 'Module'
+[Pipeline] }
+11:23:02  
+[Pipeline] // ansiColor
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] ansiColor
+[Pipeline] {
+11:23:02  
+[Pipeline] echo
+11:23:02  ---> START PHASE 'Linting'
+[Pipeline] echo
+11:23:02  Switching to container ''
+[Pipeline] container
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Linting)
+[Pipeline] withCredentials
+[Pipeline] {
+[Pipeline] configFileProvider
+11:23:02  provisioning config files...
+[Pipeline] {
+[Pipeline] dir
+11:23:03  Running in /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+[Pipeline] {
+[Pipeline] echo
+11:23:03  Phase caching is disabled, not stashing files.
+[Pipeline] parallel
+[Pipeline] { (Branch: approvalrequest)
+[Pipeline] echo
+11:23:03  Switching to container 'jnlp'
+[Pipeline] container
+[Pipeline] {
+[Pipeline] parallel
+[Pipeline] { (Branch: sendEmail)
+[Pipeline] { (Branch: sendMattermost)
+[Pipeline] { (Branch: sendTeams)
+[Pipeline] { (Branch: sendWebex)
+[Pipeline] }
+[Pipeline] }
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] echo
+11:23:03  Give input to Jenkins request
+[Pipeline] echo
+11:23:03  Submitter: accounts\C8P8ZF,accounts\P57026, accounts\C7B8GS,accounts\C7Q7RW,accounts\C7R5TN,accounts\C8C7GQ,accounts\EI5194,accounts\EJ6842,accounts\C8Q9M3,accounts\C8G2NZ
+[Pipeline] timeout
+11:23:03  Timeout set to expire in 2 hr 0 min
+[Pipeline] {
+[Pipeline] input
+11:23:03  Do you want to execute terraform plan to DEV-Candidate (Blue)?
+11:23:03  Proceed or Abort
+11:23:06  Approved by accounts\C8P8ZF
+[Pipeline] }
+[Pipeline] // timeout
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] echo
+11:23:06  Phase caching is disabled, not stashing files.
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // configFileProvider
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] echo
+11:23:06  <--- END PHASE 'Linting'
+[Pipeline] }
+11:23:06  
+[Pipeline] // ansiColor
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] ansiColor
+[Pipeline] {
+11:23:06  
+[Pipeline] echo
+11:23:06  ---> START PHASE 'Module'
+[Pipeline] echo
+11:23:06  Switching to container 'cnp-docker-terraformv100-dev-ov2'
+[Pipeline] container
+[Pipeline] {
+[Pipeline] echo
+11:23:06  Credential : [@string(credentialsId=DAWS-HS-UPSILONFRIES,variable=CNP_DEPLOY_TERRAFORM_AWS_MODULE_TOKEN), @string(credentialsId=DAWS-HS-UPSILONFRIES,variable=CNP_DEPLOY_TERRAFORM_AWS_TOKEN)]
+[Pipeline] echo
+11:23:06  Jira Scanning - DISABLED
+[Pipeline] echo
+11:23:06  CNP_XLR_TEMPLATE_URL is configured to https://xlrelease.express-scripts.com/api/v1/templates/Applications/templates/Folder2a9c42e13b784e8fbb57c559852b807c/Release47c3527db6944b918488c5c90166c4b0/start
+[Pipeline] echo
+11:23:06  setting CNP_CALLBACK_JOB to https://orchestrator24.orchestrator-v2.sys.cigna.com/job/orchestrators-folders/job/pbbef/job/Production/job/DevOps/job/EPF/job/XLRCallbackHandler/
+[Pipeline] echo
+11:23:06  setting CNP_CANDIDATE_JOB to orchestrators-folders/job/pbbef/job/Production/job/DevOps/job/EPF/job/CandidateDeployer
+[Pipeline] stage
+[Pipeline] { (terraform: plan)
+[Pipeline] echo
+11:23:06  Switching to container 'cnp-docker-terraformv100-dev-ov2'
+[Pipeline] container
+[Pipeline] {
+[Pipeline] withCredentials
+11:23:06  Masking supported pattern matches of $CNP_DEPLOY_TERRAFORM_AWS_MODULE_TOKEN or $CNP_DEPLOY_TERRAFORM_AWS_TOKEN
+[Pipeline] {
+[Pipeline] configFileProvider
+11:23:06  provisioning config files...
+[Pipeline] {
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] echo
+11:23:06  Phase caching is disabled, not stashing files.
+[Pipeline] dir
+11:23:06  Running in /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+[Pipeline] {
+[Pipeline] echo
+11:23:06  ---> START MODULE (Plan Dev Candidate:cnp-deploy-terraform-aws)
+[Pipeline] sh
+11:23:07  + cnp-deploy-terraform-aws.sh plan {"credentials":[{"id":"DAWS-HS-UPSILONFRIES","env":"dev","type":"string"}],"configDir":"envs/dev-candidate","env":"dev","awsAccountId":"364685145795","awsUsername":"DAWS-HS-UPSILONFRIES","awsRoleName":"DEPLOYER","tfVersion":"1.4.6","tfDir":"","Release_JenkinsMaster":"orchestrator24.orchestrator-v2.sys.cigna.com","Release_BuildUri":"https://orchestrator24.orchestrator-v2.sys.cigna.com/job/orchestrators-folders/job/pbbef/job/Non-Production/job/TERRAFORMS/job/aws-terraform-hs-bef-intentapi/job/feature-PBBEF-1571/7/","Release_rollbackDeploymentPackagePath":"","branchName":"feature-PBBEF-1571","repoUrl":"https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git","commitId":"5810074366b55b040e2f862905c6a009423f18a0"}
+11:23:07  
+11:23:07  WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+11:23:07  
+11:23:07  Package: cnp-deploy-terraform-aws
+11:23:07  Version: 0.3.4
+11:23:07  Status: install ok installed
+11:23:07  Priority: optional
+11:23:07  Maintainer: Evernorth Software Engineering Excellence
+11:23:07  Installed-Size: unknown
+11:23:07  Depends: cnp-util-core, cnp-login-aws
+11:23:07  Download-Size: unknown
+11:23:07  APT-Manual-Installed: yes
+11:23:07  APT-Sources: /var/lib/dpkg/status
+11:23:07  Description: This has terraform scripts for AWS deployment.
+11:23:07  
+11:23:07  Setting variable repoUrl with value 'https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git'
+11:23:07  Setting variable configDir with value 'envs/dev-candidate'
+11:23:07  Setting variable awsAccountId with value '364685145795'
+11:23:07  Setting variable awsRoleName with value 'DEPLOYER'
+11:23:07  Setting variable awsUsername with value 'DAWS-HS-UPSILONFRIES'
+11:23:07  Setting variable tfVersion with value '1.4.6'
+11:23:07  Missing tfDir and defaulting to repository root
+11:23:07  awsUsername: DAWS-HS-UPSILONFRIES
+11:23:07  loginParams: {"awsAccountId":"364685145795","awsRoleName":"DEPLOYER","awsUsername":"DAWS-HS-UPSILONFRIES"}
+11:23:07  
+11:23:07  WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+11:23:07  
+11:23:07  Package: cnp-login-aws
+11:23:07  Version: 1.0.2-dev-ov2
+11:23:07  Status: install ok installed
+11:23:07  Priority: optional
+11:23:07  Maintainer: Evernorth Software Engineering Excellence
+11:23:07  Installed-Size: unknown
+11:23:07  Depends: python3, python3-pip, apt-transport-https, unzip, curl, cnp-util-core
+11:23:07  Download-Size: unknown
+11:23:07  APT-Manual-Installed: no
+11:23:07  APT-Sources: /var/lib/dpkg/status
+11:23:07  Description: This module logs into AWS using saml2aws.
+11:23:07  
+11:23:07  Setting variable awsAccountId with value '364685145795'
+11:23:07  Setting variable awsRoleName with value 'DEPLOYER'
+11:23:07  Setting variable awsUsername with value 'DAWS-HS-UPSILONFRIES'
+11:23:07  awsAccountId: 364685145795
+11:23:07  awsRoleName: DEPLOYER
+11:23:07  awsUsername: DAWS-HS-UPSILONFRIES
+11:23:07  CNP_AWS_IDP_PROVIDER is configured to Okta.
+11:23:07  For your accounts to work with Okta, DAWS-HS-UPSILONFRIES should be configured with the following
+11:23:07    1. givenName=DAWS-HS-UPSILONFRIES,
+11:23:07    2. sn=DAWS-HS-UPSILONFRIES,
+11:23:07    3. mail=DAWS-HS-UPSILONFRIES@express-scripts.com,
+11:23:07    4. employeeNumber
+11:23:07  
+11:23:07  Logging into AWS...
+11:23:07  Using IDP Account default to access Okta https://cigna.okta.com/home/cigna_awsaccountfederation_1/0oa73k6r3qgarO3uY4x7/aln73kc6ziVIaLcRj4x7
+11:23:07  Authenticating as accounts\DAWS-HS-UPSILONFRIES ...
+11:23:09  Selected role: arn:aws:iam::364685145795:role/DEPLOYER
+11:23:09  Requesting AWS credentials using SAML assertion
+11:23:09  Logged in as: arn:aws:sts::364685145795:assumed-role/DEPLOYER/421131-S
+11:23:09  
+11:23:09  Your new access key pair has been stored in the AWS configuration
+11:23:09  Note that it will expire at 2025-02-11 17:23:09 +0000 UTC
+11:23:09  
+11:23:09  saml2aws login successful
+11:23:09  
+11:23:09  WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+11:23:09  
+11:23:09  Package: cnp-util-core
+11:23:09  Version: 1.0.2-dev-ov2
+11:23:09  Status: install ok installed
+11:23:09  Priority: optional
+11:23:09  Maintainer: Evernorth Software Engineering Excellence
+11:23:09  Installed-Size: unknown
+11:23:09  Depends: jq
+11:23:09  Download-Size: unknown
+11:23:09  APT-Manual-Installed: no
+11:23:09  APT-Sources: /var/lib/dpkg/status
+11:23:09  Description: Scripts and utilities for use with your cnp modules
+11:23:09  
+11:23:09  
+11:23:09  cnp-login-aws.sh saml2aws successful
+11:23:09  Setup git config & install Terraform...
+11:23:10  core.repositoryformatversion=0
+11:23:10  core.filemode=true
+11:23:10  core.bare=false
+11:23:10  core.logallrefupdates=true
+11:23:10  core.hookspath=/dev/null
+11:23:10  remote.origin.url=https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git
+11:23:10  remote.origin.fetch=+refs/heads/feature-PBBEF-1571:refs/remotes/origin/feature-PBBEF-1571
+11:23:10  url.https://:@git.express-scripts.com/.insteadof=git@git.express-scripts.com:
+11:23:10  url.https://:@git.express-scripts.com.insteadof=https://git.express-scripts.com
+11:23:10  http.sslverify=false
+11:23:10  Installing Terraform v1.4.6
+11:23:10  Downloading release tarball from https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_linux_amd64.zip
+11:23:10  Downloading SHA hash file from https://releases.hashicorp.com/terraform/1.4.6/terraform_1.4.6_SHA256SUMS
+11:23:10  Not instructed to use Local PGP (/opt/.tfenv/use-{gpgv,gnupg}) & No keybase install found, skipping OpenPGP signature verification
+11:23:12  Archive:  /tmp/tfenv_download.R6ivFn/terraform_1.4.6_linux_amd64.zip
+11:23:12    inflating: /opt/.tfenv/versions/1.4.6/terraform  
+11:23:12  Installation of terraform v1.4.6 successful. To make this your default version, run 'tfenv use 1.4.6'
+11:23:12  Switching default version to v1.4.6
+11:23:12  Default version (when not overridden by .terraform-version or TFENV_TERRAFORM_VERSION) is now: 1.4.6
+11:23:12  Initializing Terraform...
+11:23:12  - Terraform Working Directory: /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+11:23:12  - backend config: envs/dev-candidate/backend.config
+11:23:12  
+11:23:12  Initializing the backend...
+11:23:12  
+11:23:12  Successfully configured the backend "s3"! Terraform will automatically
+11:23:12  use this backend unless the backend configuration changes.
+11:23:12  Initializing modules...
+11:23:12  Downloading git::https://github.sys.cigna.com/cigna/thub-gov-terraform-kms.git for bef-presigned-url-kms...
+11:23:18  - bef-presigned-url-kms in .terraform/modules/bef-presigned-url-kms
+11:23:18  Downloading git::https://github.sys.cigna.com/cigna/terraform-aws-s3 for bef-storage-s3...
+11:23:22  - bef-storage-s3 in .terraform/modules/bef-storage-s3
+11:23:22  Downloading git::https://github.sys.cigna.com/cigna/lambda.git?ref=1.4.0 for callback-lambda...
+11:23:23  - callback-lambda in .terraform/modules/callback-lambda
+11:23:23  Downloading git::https://github.sys.cigna.com/cigna/lambda.git?ref=1.4.0 for presigned-url-lambda...
+11:23:23  - presigned-url-lambda in .terraform/modules/presigned-url-lambda
+11:23:23  Downloading git::https://github.sys.cigna.com/cigna/AWS-GoldenVPC.git?ref=0.7.0 for presigned-url-vpc...
+11:23:41  - presigned-url-vpc in .terraform/modules/presigned-url-vpc
+11:23:41  - presigned-url-vpc.nat_gateway in .terraform/modules/presigned-url-vpc/submodules/nat_gateway
+11:23:41  - presigned-url-vpc.subnets_non_routable in .terraform/modules/presigned-url-vpc/submodules/subnets
+11:23:41  - presigned-url-vpc.subnets_routable in .terraform/modules/presigned-url-vpc/submodules/subnets
+11:23:41  
+11:23:41  Initializing provider plugins...
+11:23:41  - terraform.io/builtin/terraform is built in to Terraform
+11:23:41  - Finding latest version of hashicorp/archive...
+11:23:41  - Finding hashicorp/aws versions matching ">= 3.43.0, >= 3.45.0, >= 4.0.0, >= 4.35.0, ~> 5.0"...
+11:23:41  - Installing hashicorp/archive v2.7.0...
+11:23:42  - Installed hashicorp/archive v2.7.0 (signed by HashiCorp)
+11:23:42  - Installing hashicorp/aws v5.86.1...
+11:24:29  - Installed hashicorp/aws v5.86.1 (signed by HashiCorp)
+11:24:29  
+11:24:29  Terraform has created a lock file .terraform.lock.hcl to record the provider
+11:24:29  selections it made above. Include this file in your version control repository
+11:24:29  so that Terraform can guarantee to make the same selections by default when
+11:24:29  you run "terraform init" in the future.
+11:24:29  
+11:24:29  Terraform has been successfully initialized!
+11:24:29  
+11:24:29  You may now begin working with Terraform. Try running "terraform plan" to see
+11:24:29  any changes that are required for your infrastructure. All Terraform commands
+11:24:29  should now work.
+11:24:29  
+11:24:29  If you ever set or change modules or backend configuration for Terraform,
+11:24:29  rerun this command to reinitialize your working directory. If you forget, other
+11:24:29  commands will detect it and remind you to do so if necessary.
+11:24:29  
+11:24:29  terraform init successful
+11:24:29  - Using Var File: envs/dev-candidate/dev-candidate.tfvars
+11:24:29  
+11:24:29  Planning...
+11:24:29  - Terraform Working Directory: /home/jenkins/agent/workspace/bef-intentapi_feature-PBBEF-1571
+11:24:29  - Terraform Config Directory: envs/dev-candidate
+11:24:29  terraform plan -no-color -input=false -var-file=envs/dev-candidate/dev-candidate.tfvars  
+11:24:29  
+11:24:29  Error: No value for required variable
+11:24:29  
+11:24:29    on _bef-presigned-url-variables.tf line 160:
+11:24:29   160: variable "callback-url" {
+11:24:29  
+11:24:29  The root module input variable "callback-url" is not set, and has no default
+11:24:29  value. Use a -var or -var-file command line argument to provide a value for
+11:24:29  this variable.
+11:24:29  
+11:24:29  Error: No value for required variable
+11:24:29  
+11:24:29    on _bef-presigned-url-variables.tf line 165:
+11:24:29   165: variable "token-service-url" {
+11:24:29  
+11:24:29  The root module input variable "token-service-url" is not set, and has no
+11:24:29  default value. Use a -var or -var-file command line argument to provide a
+11:24:29  value for this variable.
+11:24:29  
+11:24:29  terraform plan failed
+11:24:29  moduleName: cnp-deploy-terraform-aws Errors: terraform plan failed
+11:24:29  
+11:24:29  WARNING: apt does not have a stable CLI interface. Use with caution in scripts.
+11:24:29  
+11:24:29  Package: cnp-util-core
+11:24:29  Version: 1.0.2-dev-ov2
+11:24:29  Status: install ok installed
+11:24:29  Priority: optional
+11:24:29  Maintainer: Evernorth Software Engineering Excellence
+11:24:29  Installed-Size: unknown
+11:24:29  Depends: jq
+11:24:29  Download-Size: unknown
+11:24:29  APT-Manual-Installed: no
+11:24:29  APT-Sources: /var/lib/dpkg/status
+11:24:29  Description: Scripts and utilities for use with your cnp modules
+11:24:29  
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // configFileProvider
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // container
+[Pipeline] }
+11:24:29  
+[Pipeline] // ansiColor
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] echo
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                                                                               Compliance                                                                               |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |             Article              |                                            Statement                                             |              Status              |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |         CICD          |                              Pipeline does not implement a Deployment phase... Continuing                              |        SUCCESS        |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                                                                                                                                                                        |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                                                                                Pipeline                                                                                |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                         Phase                         |                         State                         |                      Environment                       |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |               Module(common: null dev)                |                        Success                        |                          dev                           |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |               Module(quality: scan dev)               |                        Success                        |                          dev                           |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |              Linting([approvalrequest])               |                        Success                        |                       Undefined                        |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                Module(terraform: plan)                |                        Failure                        |                       Undefined                        |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                                                                                                                                                                        |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                                                                      script returned exit code 1                                                                       |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  |                                      Please see https://github.sys.cigna.com/cigna/enterprise-pipeline-framework for phase types.                                      |
+11:24:29  --------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+11:24:29  
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // dir
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] }
+[Pipeline] // podTemplate
+[Pipeline] }
+[Pipeline] // timestamps
+[Pipeline] echo
+Using GitHubSCM provider for name: EPF, state: failure, phase: Status Check, as: null
+[Pipeline] withCredentials
+Masking supported pattern matches of $EPF_GITHUB_ACCESS_TOKEN
+[Pipeline] {
+[Pipeline] echo
+Posting Commit Status...
+[Pipeline] httpRequest
+[Pipeline] }
+[Pipeline] // withCredentials
+[Pipeline] echo
+Build Failed
+[Pipeline] echo
+{"scm":{"repo":"https://git.express-scripts.com/ExpressScripts/aws-terraform-hs-bef-intentapi.git","gitCommit":"5810074366b55b040e2f862905c6a009423f18a0"},"orchestrator":{"jobName":"orchestrators-folders/pbbef/Non-Production/TERRAFORMS/aws-terraform-hs-bef-intentapi/feature-PBBEF-1571","buildNumber":"7","branchName":"feature-PBBEF-1571","node":null,"timeInPipeline":"3 min 28 sec and counting"},"epf":{"stage":"End of Build","message":"Build Failed","userProvidedConfig":{"githubConnectionName":"github","githubCredentialsId":"GIT_TOKEN","commitStatusName":"","cloudName":"pbbef-openshift-devops1","adjudicatorEnvironment":"prod","phaseCache":false,"resourceStrategy":"","checkmarxEnabled":true,"sonarEnabled":true,"resourceScaleFactor":4,"stashIncludePattern":"","stashExcludePattern":""}},"exception":{"exceptionMessage":"script returned exit code 1","exceptionName":"hudson.AbortException","exceptionCause":{"name":null,"message":null},"exceptionStacktrace":[{"className":"org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution","nativeMethod":false,"lineNumber":668,"moduleVersion":null,"fileName":"DurableTaskStep.java","moduleName":null,"classLoaderName":"PluginClassLoader for workflow-durable-task-step","methodName":"handleExit"},{"className":"org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution","nativeMethod":false,"lineNumber":614,"moduleVersion":null,"fileName":"DurableTaskStep.java","moduleName":null,"classLoaderName":"PluginClassLoader for workflow-durable-task-step","methodName":"check"},{"className":"org.jenkinsci.plugins.workflow.steps.durable_task.DurableTaskStep$Execution","nativeMethod":false,"lineNumber":555,"moduleVersion":null,"fileName":"DurableTaskStep.java","moduleName":null,"classLoaderName":"PluginClassLoader for workflow-durable-task-step","methodName":"run"},{"className":"java.util.concurrent.Executors$RunnableAdapter","nativeMethod":false,"lineNumber":539,"moduleVersion":"17.0.12","fileName":"Executors.java","moduleName":"java.base","classLoaderName":null,"methodName":"call"},{"className":"java.util.concurrent.FutureTask","nativeMethod":false,"lineNumber":264,"moduleVersion":"17.0.12","fileName":"FutureTask.java","moduleName":"java.base","classLoaderName":null,"methodName":"run"},{"className":"java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask","nativeMethod":false,"lineNumber":304,"moduleVersion":"17.0.12","fileName":"ScheduledThreadPoolExecutor.java","moduleName":"java.base","classLoaderName":null,"methodName":"run"},{"className":"java.util.concurrent.ThreadPoolExecutor","nativeMethod":false,"lineNumber":1136,"moduleVersion":"17.0.12","fileName":"ThreadPoolExecutor.java","moduleName":"java.base","classLoaderName":null,"methodName":"runWorker"},{"className":"java.util.concurrent.ThreadPoolExecutor$Worker","nativeMethod":false,"lineNumber":635,"moduleVersion":"17.0.12","fileName":"ThreadPoolExecutor.java","moduleName":"java.base","classLoaderName":null,"methodName":"run"},{"className":"java.lang.Thread","nativeMethod":false,"lineNumber":840,"moduleVersion":"17.0.12","fileName":"Thread.java","moduleName":"java.base","classLoaderName":null,"methodName":"run"}]}}
+[Pipeline] echo
+To view more detailed logs, set FeatureFlags.debug to true
+[Pipeline] parallel
+[Pipeline] { (Branch: sendEmail)
+[Pipeline] { (Branch: sendMattermost)
+[Pipeline] { (Branch: sendTeams)
+[Pipeline] { (Branch: sendWebex)
+[Pipeline] }
+[Pipeline] }
+[Pipeline] }
+[Pipeline] }
+[Pipeline] // parallel
+[Pipeline] echo
+Follow the below link to see resource metrics for this pipeline:
+https://o-grafana.apps.devops-1-prod.openshift.cignacloud.com/d/xnyVI_3Mk/namespace-container-metrics?orgId=1&refresh=10s&from=1739290861186&to=1739291070075&var-namespace=pbbef-openshift-devops1 
+[Pipeline] error
+[Pipeline] }
+[Pipeline] // sendSplunkConsoleLog
+[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+
+GitHub has been notified of this commit’s build result
+
+Finished: FAILURE
